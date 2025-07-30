@@ -1,0 +1,98 @@
+
+public class Day2Patterns {
+	public static void main(String[] args) {
+		System.out.println("SQUARE PATTERN");
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= 5; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		System.out.println("DECREASING TRIANGLE");
+		for (int i = 5; i >= 1; i--) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		System.out.println("SINGLE STRAIGHT LINE");
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= 1; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		System.out.println("DIAGONAL");
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= i; j++) {
+				if (i == j)
+					System.out.print("*");
+				else
+					System.out.print(" ");
+			}
+			System.out.println();
+		}
+		System.out.println("INCREASING TRIANGLE");
+		for (int i = 5; i >= 1; i--) {
+			for (int j = 1; j <= 5; j++) {
+				if (j >= i)
+					System.out.print("*");
+				else
+					System.out.print(" ");
+			}
+			System.out.println();
+		}
+		int cnt = 1;
+		System.out.println("TRIANGLE");
+		for (int i = 5; i >= 1; i--) {
+			for (int k = 1; k <= i; k++) // to add spaces
+			{
+				System.out.print(" ");
+			}
+			for (int j = 1; j <= cnt; j++) {
+				System.out.print("*");
+			}
+			cnt = cnt + 2;
+			System.out.println();
+		}
+		int cnt2=7;
+		System.out.println("INVERTED TRIANGLE");
+		for (int i = 1; i<= 5; i++) {
+			for (int k = 1; k <= i; k++) // to add spaces
+			{
+				System.out.print(" ");
+			}
+			for (int j = 1; j <= cnt2; j++) {
+				System.out.print("*");
+			}
+			cnt2 = cnt2-2;
+			System.out.println();
+		}
+		cnt=0; cnt2=7;
+		System.out.println("DIAMOND");
+		for (int i = 5; i >= 1; i--) {
+			for (int k = 1; k <= i; k++) // to add spaces
+			{
+				System.out.print(" ");
+			}
+			for (int j = 1; j <= cnt; j++) {
+				System.out.print("*");
+			}
+			cnt = cnt + 2;
+			System.out.println();
+		}
+		for (int i = 1; i<= 5; i++) {
+			for (int k = 1; k <= i; k++) // to add spaces
+			{
+				System.out.print(" ");
+			}
+			for (int j = 1; j <= cnt2; j++) {
+				System.out.print("*");
+			}
+			cnt2 = cnt2-2;
+			System.out.println();
+		}
+		
+
+	}
+}
