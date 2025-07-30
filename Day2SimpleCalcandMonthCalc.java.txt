@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class Day2SimpleCalcandMonthCalc {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		/*
+		 * System.out.
+		 * println("Simple Calculator\nChoose an operation:\n1.Addition\n2.Subtraction\n3.Multipication\n4.Division Quotient\n5.Division Remainder"
+		 * ); int ch=sc.nextInt(); System.out.println("Enter the 1st number:"); int
+		 * num1=sc.nextInt(); System.out.println("Enter the 2nd number:"); int
+		 * num2=sc.nextInt(); switch(ch) { case 1:
+		 * System.out.println("The sum is "+(num1+num2)); break; case 2:
+		 * System.out.println("The difference is "+(num1-num2)); break; case 3:
+		 * System.out.println("The product is "+(num1*num2)); break; case 4:
+		 * System.out.println("The quotient is "+(num1/num2)); break; case 5:
+		 * System.out.println("The remainder is "+(num1%num2)); break;
+		 * default:System.out.println("Invalid choice"); }
+		 */
+		System.out.println(
+				"Days of the Month Calculator\nChoose a month:\n1.January\n2.February\n3.March\n4.April\n5.May\n6.June\n7.July\n8.August\n9.September\n10.October\n11.November\n12.December");
+		int ch2 = sc.nextInt();
+// Nov april june and sept have 30 days remaining months have 31 days feb has 28 days
+		switch (ch2) {
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			System.out.println("This month has 30 days");
+			break;
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			System.out.println("This month has 31 days");
+			break;
+		case 2:
+			System.out.println("This month has 28 days and 29 days on a leap year");
+			break;
+		default:
+			System.out.println("Invalid choice");
+
+		}
+	}
+
+}
+//how to take character input? char ch=sc.next().charAt(0); 
+//type sysout and then click ctrl+space+enter to get S.O.Pln();
+// type ctrl+shift+F to  format your code
+//type ctrl+shift+O to remove unused imports and organize your import statements
