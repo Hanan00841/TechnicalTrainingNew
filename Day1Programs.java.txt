@@ -1,0 +1,147 @@
+import java.util.*;
+public class Day1Programs {
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println(" 1.Largest of 3 numbers \n 2.Check whether it's a Leap Year or Not \n 3.Grade Calculator \n 4.Check whether the number is positive, negative or 0 \n 5.Check number status \n 6.Triangle Validity Checker \n 7.Electricity Bill Calculator \n Enter your choice: ");
+        int ch=sc.nextInt();
+        int a,b,c;
+        int year;
+        int marks; 
+        int num;
+        String s1="",s2="";
+        int side1,side2,side3;
+        int cpu; int units, finalcost;
+        switch(ch)
+        {
+            case 1: System.out.println("Enter the first number:");
+            a=sc.nextInt();
+            System.out.println("Enter the second number:");
+            b=sc.nextInt();
+            System.out.println("Enter the third number:");
+            c=sc.nextInt();
+            if(a>b && a>c)
+            {
+                System.out.println(a+" is the greatest");
+            }
+            else if(b>a && b>c)
+            {
+                System.out.println(b+" is the greatest");
+            }
+            else
+            {
+                System.out.println(c+ " is the greatest");
+            }
+            break;
+            case 2: System.out.println("Enter the year:");
+            year=sc.nextInt();
+            if(year%4==0 && year%100!=0) //weeds out 100, 200, 300,etc. which are NOT leap years
+            {
+                System.out.println("It is a leap year");
+            }
+            else if(year%400==0) //classifies 400, 800, and so on correctly as a leap year
+                System.out.println("It is a leap year");
+            else
+            {
+                System.out.println("It is not a leap year");
+            }
+            break;
+            case 3: 
+            System.out.println("Enter your marks:");
+            marks=sc.nextInt();
+            if(marks<35)
+            {
+                System.out.println("F");
+            }
+            else if(marks<=50)
+            {
+                System.out.println("E");
+            }
+            else if(marks<=65)
+            {
+                System.out.println("D");
+            }
+            else if(marks<=75)
+            {
+                System.out.println("C");
+            }
+            else if(marks<=85)
+            {
+                System.out.println("B");
+            }
+            else
+            {
+                System.out.println("A");
+            }
+            break;
+            case 4: System.out.println("Enter the number:");
+            num=sc.nextInt();
+            if(num>0)
+            {
+                System.out.println(num+" is positive");
+            }
+            else if(num<0)
+            {
+                System.out.println(num+" is negative");
+            }
+            else
+            {
+                System.out.println("The number is 0");
+            }
+            break;
+            case 5: System.out.println("Enter the number:");
+            num=sc.nextInt();
+            if(num>0)
+            {
+                s1="Positive";
+            }
+            else
+            {
+                s1="Negative";
+            }
+            if(num%2==0)
+            {
+                s2="Even";
+            }
+            else
+            {
+                s2="Odd";
+            }
+            System.out.println(s1+" "+s2);
+            break;
+            case 6: System.out.println("Enter the three sides");
+            side1=sc.nextInt();
+            side2=sc.nextInt();
+            side3=sc.nextInt();
+            if(side1+side2>side3 && side2+side3>side1 && side1+side3>side2)
+            {
+                System.out.println("The traingle is valid");
+            }
+            else
+            {
+                System.out.println("The triangle is invalid");
+            }
+            break;
+            case 7: System.out.println("Enter the cost per unit:");
+            cpu=sc.nextInt();
+            System.out.println("Enter the number of units consumed:");
+            units=sc.nextInt();
+            if(units<=100)
+            {
+                finalcost=0;
+
+            }
+            else
+            {
+                finalcost=(units-100)*cpu;
+            }
+            System.out.println("The electricity bill is:"+finalcost);
+            break;
+        }
+        sc.close();//good practice!
+
+    }
+
+//Feedback: check leap year logic and variable declaration can be done within the cases itself to reduce wastage of space2
+    
+}
