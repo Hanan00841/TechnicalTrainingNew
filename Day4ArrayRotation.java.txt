@@ -1,0 +1,41 @@
+import java.util.*;
+public class Day4ArrayRotation {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of the array:");
+        int n=sc.nextInt();
+        System.out.println("Enter the number of rotations:");
+        int rot=sc.nextInt();
+        int arr[]=new int[n];
+        int org[]=new int[n];
+        int cnt=0; int samepl=0;
+        System.out.println("Enter the array elements:");
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=sc.nextInt();
+            org[i]=arr[i];
+        }
+        for(int i=0;i<rot;i++)
+        {
+            int last=arr[n-1];
+            for(int j=n-2;j>=0;j--)
+            {
+                arr[j+1]=arr[j];
+            }
+            arr[0]=last;
+            while(i==rot-1&& cnt<=n-1)
+            {
+                if(arr[cnt]==org[cnt])
+                {
+                    samepl=samepl+1;
+                }
+                cnt=cnt+1;
+            }
+            cnt=0;
+        }
+        System.out.println("\n"+samepl);
+        sc.close();     
+    }
+    
+}
+//optimize the time complexity
