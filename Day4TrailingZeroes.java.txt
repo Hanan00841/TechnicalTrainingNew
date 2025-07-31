@@ -1,0 +1,40 @@
+
+import java.util.*;
+public class Day4TrailingZeroes{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of the array:");
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        int lp=n-1;
+        System.out.println("Enter the array elements:");
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]==0)
+            {
+                while(lp==0)
+                {
+                    lp=lp-1;
+                }
+
+                for(int j=i+1;j<=lp;j++)
+                {
+                   arr[j-1]=arr[j];
+                }
+                arr[lp]=0;
+            }
+        }
+        System.out.println("The new array is:");
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]);
+        }
+        sc.close();
+
+    }
+    
+}
