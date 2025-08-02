@@ -1,0 +1,19 @@
+import java.util.*;
+public class Day5RotatedStringSirSolution {
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the original string:");
+		String str=sc.next();
+		System.out.println("Enter the rotated string:");
+		String rot=sc.next();
+		String sum=str+str;
+		if(str.length()==rot.length()&&sum.contains(rot))
+		{
+			System.out.println("It is a rotation");
+		}
+		else
+			System.out.println("It is NOT a rotation");
+	}
+	
+
