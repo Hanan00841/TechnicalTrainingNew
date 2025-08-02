@@ -1,0 +1,23 @@
+package abc;
+
+public class Day5CollegeFriends extends Day5Friends{
+
+	String clgName;
+	Day5CollegeFriends(String pname,  int a, String d, boolean s,String sname)
+	{
+		super(pname,a,d,s);
+		this.schoolName=sname;
+	}
+	@Override
+	public String toString()
+	{
+		return "Petname: " + petname + ", Age: " + age + ", DOB: " + dob + ", Status: " + status+" School name: "+schoolName ;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Day5SchoolFriends F=new Day5SchoolFriends("avocado",20,"29/09/2004",true,"BGHS");
+		System.out.println(F.toString());
+		
+	}
+
+}
