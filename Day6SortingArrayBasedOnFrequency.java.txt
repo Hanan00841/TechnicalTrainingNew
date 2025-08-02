@@ -1,0 +1,63 @@
+import java.util.*;
+
+
+public class Day6SortingArrayBasedOnFrequency {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of elements:");
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		int num[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		int unique[] = new int[n];
+		int cnt = 0;
+		System.out.println("Enter the array elements:");
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < 11; j++) {
+				if (num[j] == arr[i]) {
+					unique[cnt]=arr[i];
+					num[j] = 999;
+					cnt++;
+				}
+			}
+		}
+		
+		System.out.println("the unique array elements are:");
+		for (int i = 0; i < cnt;i++) {
+			System.out.print(unique[i]+" ");
+			}
+		int freq[] = new int[cnt];
+		for(int i=0;i<cnt;i++)
+		{
+			freq[i]=0;
+			for(int j=0;j<n;j++)
+			{
+				if(arr[j]==unique[i])
+					freq[i]++;
+			}
+		}
+		for(int i=0;i<cnt;i++)
+		{
+			for(int j=0;j<cnt-1;j++)
+			{
+				if(freq[j]>freq[j+1])
+				{
+					int t=freq[j];
+					freq[j]=freq[j+1];
+					freq[j+1]=t;
+					int t2=unique[j];
+					unique[j]=unique[j+1];
+					unique[j+1]=t2;
+				}
+			}
+		}
+		System.out.println("The sorted array is:");
+		for(int i=0;i<cnt;i++)
+			System.out.print(unique[i]+" ");
+
+	}
+}
