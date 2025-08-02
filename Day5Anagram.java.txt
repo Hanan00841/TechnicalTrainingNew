@@ -1,0 +1,41 @@
+package abc;
+import java.util.*;
+public class Day5Anagram {
+// MY OWN LOGIC LESSSGOOOOOO
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the 1st string:");
+		String s1=sc.next();
+		System.out.println("Enter the 2nd string:");
+		String s2=sc.next();
+		boolean flag=true;
+		if(s1.length()!=s2.length())
+		{
+			System.out.println("NOT ANAGRAM due to length mismatch");
+		}
+		else
+		{	int len=s1.length();
+			for(int i=0;i<len;i++)
+			{
+				if(s1.indexOf(s2.charAt(i))!=-1)//the s2 character is in s1
+				{
+					s1=s1.replaceFirst(s2.substring(i,i+1), " ");//replace() replaces all instances of the character so i use replaceFirst() which accepts two strings. to make the s2 character into a string we use substring()
+				}
+				else //s2 has a character that is not in s1
+				{
+					flag=false;
+					break;
+				}
+			}
+		}
+		if(flag==true)
+		{
+			System.out.println("ANAGRAM");
+		}
+		else
+		{
+			System.out.println("NOT ANAGRAM");
+		}
+
+	}
