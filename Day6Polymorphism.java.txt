@@ -1,0 +1,14 @@
+package abc;
+//superclass
+public class Day6Polymorphism {
+	void display()
+	{
+		System.out.println("This is the superclass method");
+	}
+	public static void main(String args[])
+	{
+		Day6Polymorphism obj=new Day6Polymorphism();
+		obj.display();
+	}
+
+}
