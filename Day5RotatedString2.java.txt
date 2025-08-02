@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+
+public class Day5RotatedString2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the original string:");
+		String str = sc.next();
+		System.out.println("Enter the rotated string:");
+		String rot = sc.next();
+		int ind = 0; int nextind=0;
+		boolean flag = true;
+		for (int i = 0; i < str.length(); i++) {
+			while (rot.charAt(i) != str.charAt(ind) && ind<str.length()) {
+				ind++;
+			}
+			if(ind==str.length() - 1)
+				nextind=0;
+			else
+				nextind=ind+1;
+			if (i != str.length() - 1) {
+				if (rot.charAt(i + 1) != str.charAt(nextind)) {
+					flag = false;
+					break;
+				}
+			} else {
+				if (rot.charAt(0) != str.charAt(nextind)) {
+					flag = false;
+					break;
+				}
+			}
+			ind = 0;
+			nextind=0;
+		}
+		if (flag == true) {
+			System.out.println(rot + " is a rotation of " + str);
+		} else
+			System.out.println(rot + " is NOT a rotation of " + str);
+		sc.close();
+	}
+}
