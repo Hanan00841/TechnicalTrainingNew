@@ -1,0 +1,18 @@
+package abc;
+//subclass
+public class Day6Polymorphism2 extends Day6Polymorphism{
+
+	@Override //annotation is not a must
+	void display() 
+	{
+		System.out.println("This is the subclass method");
+	} 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Day6Polymorphism2 obj=new Day6Polymorphism2();
+		obj.display();
+		
+
+	}
+
+}
