@@ -1,0 +1,38 @@
+package abc;
+
+public class Day5Friends {
+	String petname;
+	int age;
+	String dob;
+	boolean status;
+
+	Day5Friends(String pname, int a, String d, boolean s) {
+		this.petname = pname;
+		this.age = a;
+		this.dob = d;
+		this.status = s;
+	}
+
+	public String meet_friend(String greeting_msg, String mood) {
+		if (mood=="bad") {
+			this.status = false;
+			return "sorry can't";
+		} else {
+			this.status = true;
+			return "sure let's meet at 5";
+		}
+	}
+	@Override
+	public String toString() {
+	    return "Petname: " + petname + ", Age: " + age + ", DOB: " + dob + ", Status: " + status ;
+	}
+
+
+	public static void main(String args[]) {
+		Day5Friends wafaa = new Day5Friends("Habibi", 21, "25/11/2003", true);
+		Day5Friends priya = new Day5Friends("Pri", 20, "01/01/2004", true);
+		System.out.println(priya.meet_friend("Hey want to hang out?","Good"));
+		System.out.println(wafaa.toString());
+
+	}
+}
